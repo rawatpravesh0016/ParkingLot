@@ -28,7 +28,7 @@ public class ParkingLot {
             this.MAX_SIZE = Integer.parseInt(lotCount);
         } catch (Exception e) {
             System.out.println("Invalid lot count");
-            System.out.println();
+            
         }
         this.availableSlotList = new ArrayList<Integer>() {};
         for (int i=1; i<= this.MAX_SIZE; i++) {
@@ -47,10 +47,10 @@ public class ParkingLot {
       String slot;
         if (this.MAX_SIZE == 0) {
             System.out.println("Sorry, parking lot is not created");
-            System.out.println();
+            
         } else if (this.map1.size() == this.MAX_SIZE) {
             System.out.println("Sorry, parking lot is full");
-            System.out.println();
+            
         } else {
             Collections.sort(availableSlotList);
             slot = availableSlotList.get(0).toString();
@@ -91,20 +91,20 @@ public class ParkingLot {
                 file.writeToTextFile("output.txt",str);
             } else {
                 System.out.println("Slot number " + slotNo + " is already empty");
-                System.out.println();
+                
             }
         } else {
             System.out.println("Parking lot is empty");
-            System.out.println();
+            
         }
     }
     public void getRegistrationNumbersFromAge(Integer age) throws IOException {
         if (this.MAX_SIZE == 0) {
             System.out.println("Sorry, parking lot is not created");
-            System.out.println();
+            
         } else if (this.map3.containsKey(age)) {
             ArrayList<String> regNoList = this.map3.get(age);
-            System.out.println();
+            
             for (int i=0; i < regNoList.size(); i++) {
                 if (!(i==regNoList.size() - 1)){
                     String str = regNoList.get(i) + ",";
@@ -116,7 +116,7 @@ public class ParkingLot {
             }
         } else {
             System.out.println("Not found");
-            System.out.println();
+            
         }
     }
     public void getSlotNumbersFromAge(Integer age) throws IOException {
@@ -139,22 +139,22 @@ public class ParkingLot {
             }
             str=str+System.lineSeparator();
             file.writeToTextFile("output.txt",str);
-            System.out.println();
+            
         } else {
             System.out.println("Not found");
-            System.out.println();
+            
         }
     }
     public void getSlotNumberFromRegNo(String regNo) throws IOException {
         if (this.MAX_SIZE == 0) {
             System.out.println("Sorry, parking lot is not created");
-            System.out.println();
+            
         } else if (this.map2.containsKey(regNo)) {
             String str = this.map2.get(regNo).toString()+System.lineSeparator();
             file.writeToTextFile("output.txt",str);
         } else {
             System.out.println("Not found");
-            System.out.println();
+            
         }
     }
 }
